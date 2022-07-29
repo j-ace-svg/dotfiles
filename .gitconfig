@@ -17,3 +17,4 @@
   l = log
   b = branch
   d = diff
+  ls = ls-files
