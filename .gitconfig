@@ -1,0 +1,19 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = John Montgomery
+	email = j.ace.svg@gmail.com
+[init]
+	defaultBranch = master
+[alias]
+	s = status
+  cg = config --global
+  a = add
+  p = push
+  pu = push -u
+  pr = pull
+  co = checkout
+  c = commit
+  l = log
+  b = branch
+  d = diff
