@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-# force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -121,7 +121,7 @@ fi
 export EDITOR=nvim
 
 # Pull changes from .vimrc remote
-git -C ~/.vimrc/ pull --ff-only -q
+git -C ~/.dotfiles/ pull --ff-only -q
 
 # Setup FZF with ripgrep
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
