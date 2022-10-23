@@ -1,0 +1,5 @@
+bind -m vi -x '"\C-l":"clear"'
+bind -m vi-move -x '"\C-l":"clear"'
+bind -m vi-insert -x '"\C-l":"clear"'
+bind -m vi '"v": _edit_wo_executing;'
+bind -m vi-insert -x '"\C-f":"fzf"'

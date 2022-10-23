@@ -4,11 +4,9 @@ set keyseq-timeout 0
 $if mode=vi
 
   set keymap vi-insert
-  "\C-l":"\e"
   "jk":"\e"
   "kj":"\e"
 
   set keymap vi-command
-  "v":_edit_wo_executing
 
 $endif
