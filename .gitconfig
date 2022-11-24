@@ -10,7 +10,7 @@
   cg = config --global
   a = add
   p = push
-  pr = pull
+  pl = pull
   co = checkout
   c = commit
   l = log
