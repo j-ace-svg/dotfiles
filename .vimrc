@@ -194,6 +194,7 @@ Plug 'ThePrimeagen/vim-be-good'
 
 " File switching
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'ThePrimeagen/harpoon'
 call plug#end()
