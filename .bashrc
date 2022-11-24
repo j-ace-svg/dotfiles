@@ -127,7 +127,7 @@ fi
 export EDITOR=nvim
 
 # Pull changes from .vimrc remote
-git -C ~/.dotfiles/ pull --ff-only -q
+# git -C ~/.dotfiles/ pull --ff-only -q
 
 # Setup FZF with ripgrep
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
