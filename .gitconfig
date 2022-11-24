@@ -10,7 +10,6 @@
   cg = config --global
   a = add
   p = push
-  pu = push -u
   pr = pull
   co = checkout
   c = commit
