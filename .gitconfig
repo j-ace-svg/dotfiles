@@ -6,7 +6,7 @@
 [init]
 	defaultBranch = master
 [alias]
-	s = status
+  s = status
   cg = config --global
   a = add
   p = push
