@@ -47,5 +47,38 @@ sql-music () {
             exit 1
     esac
 }
+
 # Completion for sql-music
-complete -W "add get" sql-music
+_sql-music () {
+    local cur prev opts
+    COMPREPLY=()
+    cur="${COMP_WORDS[COMP_CWORD]}"
+    prev="${COMP_WORDS[COMP_CWORD-1]}"
+    opts=("add" "get")
+
+    if [[ ${COMP_CWORD} -eq 1 ]]; then
+        COMPREPLY=( $(compgen -W "${opts[*]}" -- ${cur}) )
+    else
+        case ${COMP_WORDS[1]} in
+            "add")
+                if [[ ${COMP_CWORD} -eq 2 ]]; then
+                    COMPREPLY=( $(compgen -W "musician song" -- ${cur}) )
+                fi
+                ;;
+
+            "get")
+                if [[ ${COMP_CWORD} -eq 2 ]]; then
+                    COMPREPLY=( $(compgen -W "musician song" -- ${cur}) )
+                fi
+                ;;
+
+            *)
+                ;;
+
+        esac
+    fi
+    return 0
+
+}
+
+complete -F _sql-music sql-music
