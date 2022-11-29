@@ -8,5 +8,6 @@ alias dk='sudo docker'
 alias g='git'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias c='config'
+alias listen='mpv --no-video --loop=inf'
 
 source .mysql_aliases.sh
