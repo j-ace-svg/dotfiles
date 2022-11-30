@@ -22,4 +22,34 @@ prettyjson_w() {
     curl "$1" | python3 -m json.tool
 }
 
+bw_search() {
+    local TEMP=`getopt --long -o "plh" "$@"`
+    for i in $TEMP; do
+        case "$i" in
+    #while getopts "pl" opt; do
+    #    case "$opt" in
+            -p)
+                local a=$(bw list "$1" --search "$2")
+                prettyjson_s "$a"
+                return 0
+                ;;
+            -l)
+                local a=$(bw list "$1" --search "$2")
+                [[ "$a" ]] && prettyjson_s "$a" | less
+                return 0
+                ;;
+            --)
+                local a=$(bw list "$1" --search "$2")
+                [[ "$a" ]] && prettyjson_s "$a" | less
+                return 0
+                ;;
+            -h)
+                echo "Usage: $0 [-pl] [type] [search]" >&2
+                return 1
+                ;;
+        esac
+    done
+
+}
+
 source .mysql_aliases.sh
