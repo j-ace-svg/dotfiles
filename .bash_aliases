@@ -10,19 +10,19 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias c='config'
 alias listen='mpv --no-video --loop=inf'
 
-prettyjson_s() {
+prettyjson-s() {
     echo "$1" | python3 -m json.tool
 }
 
-prettyjson_f() {
+prettyjson-f() {
     python3 -m json.tool "$1"
 }
 
-prettyjson_w() {
+prettyjson-w() {
     curl "$1" | python3 -m json.tool
 }
 
-bw_search() {
+bw-search() {
     local TEMP=`getopt --long -o "plh" "$@"`
     for i in $TEMP; do
         case "$i" in
@@ -30,17 +30,17 @@ bw_search() {
     #    case "$opt" in
             -p)
                 local a=$(bw list "$1" --search "$2")
-                prettyjson_s "$a"
+                prettyjson-s "$a"
                 return 0
                 ;;
             -l)
                 local a=$(bw list "$1" --search "$2")
-                [[ "$a" ]] && prettyjson_s "$a" | less
+                [[ "$a" ]] && prettyjson-s "$a" | less
                 return 0
                 ;;
             --)
                 local a=$(bw list "$1" --search "$2")
-                [[ "$a" ]] && prettyjson_s "$a" | less
+                [[ "$a" ]] && prettyjson-s "$a" | less
                 return 0
                 ;;
             -h)
