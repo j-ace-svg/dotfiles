@@ -10,4 +10,16 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias c='config'
 alias listen='mpv --no-video --loop=inf'
 
+prettyjson_s() {
+    echo "$1" | python3 -m json.tool
+}
+
+prettyjson_f() {
+    python3 -m json.tool "$1"
+}
+
+prettyjson_w() {
+    curl "$1" | python3 -m json.tool
+}
+
 source .mysql_aliases.sh
