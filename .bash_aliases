@@ -52,4 +52,6 @@ bw-search() {
 
 }
 
-source .mysql_aliases.sh
+if [ -f ~/.bash_aliases ]; then
+    . ~/.mysql_aliases.sh
+fi
