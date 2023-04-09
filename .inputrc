@@ -6,7 +6,9 @@ $if mode=vi
   set keymap vi-insert
   "jk":"\e"
   "kj":"\e"
+  "\C-t": accept-line
 
   set keymap vi-command
+  "\C-t": accept-line
 
 $endif
