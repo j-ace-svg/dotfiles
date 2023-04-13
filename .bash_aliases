@@ -23,6 +23,30 @@ prettyjson-w() {
     curl "$1" | python3 -m json.tool
 }
 
+go() {
+    case $1 in
+        (c)
+            shift;
+            if [ -d "$HOME/.config" ]; then cd "$HOME/.config/$@"; fi
+        ;;
+        (doc)
+            shift;
+            if [ -d "$HOME/Documents" ]; then cd "$HOME/Documents/$@"; fi
+        ;;
+        (dow)
+            shift;
+            if [ -d "$HOME/Downloads" ]; then cd "$HOME/Downloads/$@"; fi
+        ;;
+        (dot)
+            shift;
+            if [ -d "$HOME/.dotfiles" ]; then cd "$HOME/.dotfiles/$@"; fi
+        ;;
+        (*)
+            cd "$HOME/$@"
+        ;;
+    esac
+}
+
 bw-search() {
     local TEMP=`getopt --long -o "plh" "$@"`
     for i in $TEMP; do
