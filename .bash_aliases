@@ -10,6 +10,7 @@ alias g='git'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias c='config'
 alias listen='mpv --no-video --loop=inf'
+alias ns='f(){ nix search nixpkgs "$@" | less -R; }; f'
 
 prettyjson-s() {
     echo "$1" | python3 -m json.tool
